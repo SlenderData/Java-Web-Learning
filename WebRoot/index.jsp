@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		 	String sessionId=request.getSession().getId();
   		 	String sessionId2=session.getId();
   		 	application.setAttribute("admin", "admin");
-  		 	int i=1/0;
+//  		 	int i=1/0;
   		 %>
   		 <%=pageContext.getAttribute("aaa") %><br>
   		 <%=sessionId %><br>
