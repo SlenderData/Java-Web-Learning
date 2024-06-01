@@ -114,4 +114,29 @@ public class ProductServlet extends HttpServlet {
             }
         }
     }
+
+    private Connection getConnection() throws SQLException {
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/jjxy?useUnicode=true&characterEncoding=utf-8", "root", "root");
+    }
+
+    private void listProducts(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        List<Product> products = new ArrayList<>();
+        try (Connection con = getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT * FROM t_product");
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt("id"));
+                product.setName(rs.getString("name"));
+                product.setPrice(rs.getDouble("price"));
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        request.setAttribute("products", products);
+        request.getRequestDispatcher("/jsp/list.jsp").forward(request, response);
+    }
 }

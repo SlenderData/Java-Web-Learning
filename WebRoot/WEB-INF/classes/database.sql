@@ -1,4 +1,4 @@
-set names gbk;
+set names utf8;
 create database jjxy charset=utf8;
 use jjxy;
 -- 商品表

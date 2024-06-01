@@ -2,7 +2,7 @@
 
 WEB 应用开发的课程作业
 
-原 MyEclipse 项目源代码 👉 [shoppingcart.rar](https://www.github.com/SlenderData/Java-WEB-Learning/blob/main/resources/shoppingcart.rar)
+原 MyEclipse 项目源代码 👉 [shoppingcart.rar](https://www.github.com/SlenderData/Java-WEB-Learning/tree/main/resources/shoppingcart.rar)
 
 **开发环境**：<img src="https://raw.githubusercontent.com/SlenderData/img/main/images/%E5%B8%B8%E7%94%A8/Logo/OperatingSystem/Windows11.svg" alt="Windows 11 Logo" style="height:1em"> `Windows 11 Pro 23H2`
 
