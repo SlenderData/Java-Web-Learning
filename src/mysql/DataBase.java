@@ -11,7 +11,7 @@ import java.sql.Connection;
 public class DataBase {
 	private Connection con=null;
 	public DataBase(){
-		String url="jdbc:mysql://localhost:3306/Cart?useUnicode=true&characterEncoding=utf-8";
+		String url="jdbc:mysql://localhost:3306/Cart?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai";
 		String un="root";
 		String pwd="root";
 		try{
