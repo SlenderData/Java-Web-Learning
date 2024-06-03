@@ -1,11 +1,22 @@
 package entity;
 
 
-public class Cart {
+
+public class Order {
+	private String id;
 	private String goodsname;
 	private int number;
 	private double price;
 	private String username;
+	public Order() {
+		super();
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getGoodsname() {
 		return goodsname;
 	}
@@ -30,11 +41,6 @@ public class Cart {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public Cart() {
-		super();
-		
-	}
-	
 	
 	
 }

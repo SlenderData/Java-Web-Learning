@@ -8,7 +8,7 @@ WEB 应用开发的课程作业
 
 &emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://raw.githubusercontent.com/SlenderData/img/main/images/%E5%B8%B8%E7%94%A8/Logo/IDE/JetBrains/IntelliJ-IDEA.svg" alt="IntelliJ IDEA Logo" style="height:1em"> `IntelliJ IDEA 2024.1.2`
 
-&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://raw.githubusercontent.com/SlenderData/img/main/images/%E5%B8%B8%E7%94%A8/Logo/Language/Java.svg" alt="Java Logo" style="height:1em"> `Java SE Development Kit 7u80` [Download](https://www.oracle.com/java/technologies/javase/javase7-archive-downloads.html)
+&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://raw.githubusercontent.com/SlenderData/img/main/images/%E5%B8%B8%E7%94%A8/Logo/Language/Java.svg" alt="Java Logo" style="height:1em"> `Java SE Development Kit 8u202` [Download](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
 
 &emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://raw.githubusercontent.com/SlenderData/img/main/images/%E5%B8%B8%E7%94%A8/Logo/Database/MySQL.svg" alt="MySQL Logo" style="height:1em"> `MySQL 5.5.28` [Download](https://downloads.mysql.com/archives/community/)
 
