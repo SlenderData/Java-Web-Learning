@@ -12,7 +12,7 @@ public class DataBase {
     private Connection con = null;
 
     public DataBase() {
-        String url = "jdbc:mysql://localhost:3306/jjxy?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai";
+        String url = "jdbc:mysql://localhost:3306/cart?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai";
         String un = "root";
         String pwd = "root";
         try {

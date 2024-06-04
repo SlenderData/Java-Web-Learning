@@ -2,10 +2,19 @@ package entity;
 
 
 public class User {
+    private String uid;
     private String username;
     private String password;
     private String phone;
     private String address;
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     public String getUsername() {
         return username;
