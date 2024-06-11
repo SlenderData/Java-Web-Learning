@@ -64,7 +64,7 @@ public class UserServlet extends HttpServlet {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        String sql = "insert into user(uid,un,pwd,phone,addr) values(UUID(),'" + username + "','" + password + "','" + phone + "','" + address + "')";
+        String sql = "insert into user(un,pwd,phone,addr) values('" + username + "','" + password + "','" + phone + "','" + address + "')";
         db.setData(sql);
         resp.sendRedirect(req.getContextPath() + "/login.jsp");
         db.close();
@@ -79,11 +79,10 @@ public class UserServlet extends HttpServlet {
         try {
             if (rs.next()) {
                 User u = new User();
-                u.setUid(rs.getString(1));
-                u.setUsername(rs.getString(2));
-                u.setPassword(rs.getString(3));
-                u.setPhone(rs.getString(4));
-                u.setAddress(rs.getString(5));
+                u.setUsername(rs.getString(1));
+                u.setPassword(rs.getString(2));
+                u.setPhone(rs.getString(3));
+                u.setAddress(rs.getString(4));
                 session.setAttribute("user", u);
                 resp.sendRedirect(req.getContextPath() + "/show.goods");
                 return;

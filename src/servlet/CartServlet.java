@@ -137,8 +137,8 @@ public class CartServlet extends HttpServlet {
         //删除某个
         else {
             String goodsname = req.getParameter("goodsname");
-//			byte[] b=goodsname.getBytes("ISO8859-1");
-//			goodsname=new String(b,"utf-8");
+            byte[] b = goodsname.getBytes("ISO8859-1");
+            goodsname = new String(b, "utf-8");
 //			这里取得的编码是utf-8不做处理，tomcat版本不同返回的值编码可能不一样，如果中文乱码，则对编码进行处理
             String sql = "DELETE FROM cart WHERE goodsname = '" + goodsname + "' ";
             db.setData(sql);

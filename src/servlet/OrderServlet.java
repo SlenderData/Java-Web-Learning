@@ -67,7 +67,7 @@ public class OrderServlet extends HttpServlet {
     protected void detail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String OrderId = req.getParameter("id");
         DataBase db = new DataBase();
-        ResultSet rs = db.getData("SELECT * FROM t_order where id='" + OrderId + "'");
+        ResultSet rs = db.getData("SELECT * FROM order_ where id='" + OrderId + "'");
         try {
             while (rs.next()) {
                 Order o = new Order();
@@ -104,7 +104,7 @@ public class OrderServlet extends HttpServlet {
     protected void showOrders(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DataBase db = new DataBase();
         User u = (User) req.getSession().getAttribute("user");
-        ResultSet rs = db.getData("SELECT distinct id FROM t_order where un='" + u.getUsername() + "' ");
+        ResultSet rs = db.getData("SELECT distinct id FROM order_ where un='" + u.getUsername() + "' ");
         try {
             while (rs.next()) {
                 String id = rs.getString("id");
@@ -139,7 +139,7 @@ public class OrderServlet extends HttpServlet {
         String username = u.getUsername();
         DataBase db = new DataBase();
         for (Cart c : cart_) {
-            String sql = "insert into t_order(id,un,goodsname,number,price) values('" + id + "','" + username + "','" + c.getGoodsname() + "'," + c.getNumber() + "," + c.getPrice() + ")";
+            String sql = "insert into order_(id,un,goodsname,number,price) values('" + id + "','" + username + "','" + c.getGoodsname() + "'," + c.getNumber() + "," + c.getPrice() + ")";
             db.setData(sql);
         }
         db.setData("DELETE FROM cart");

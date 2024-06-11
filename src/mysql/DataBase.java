@@ -12,7 +12,7 @@ public class DataBase {
     private Connection con = null;
 
     public DataBase() {
-        String url = "jdbc:mysql://localhost:3306/cart?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai";
+        String url = "jdbc:mysql://localhost:3306/jjxy?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai";
         String un = "root";
         String pwd = "root";
         try {
@@ -32,7 +32,7 @@ public class DataBase {
         try {
             stm = con.createStatement();
             ResultSet result = stm.executeQuery(sql);
-            System.out.println("getData！！！");
+            System.out.println("getData!!!");
             return result;
         } catch (SQLException e) {
             System.out.println("SQLException!!!");
@@ -46,7 +46,7 @@ public class DataBase {
         try {
             stm = con.createStatement();
             stm.executeUpdate(sql);
-            System.out.println(" setData！！！");
+            System.out.println("setData!!!");
 
         } catch (SQLException e) {
             System.out.println("SQLException!!!");
