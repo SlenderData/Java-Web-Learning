@@ -4,7 +4,7 @@
     //获取Cart List
     List<Cart> cart = (List<Cart>) request.getAttribute("cart");
 
-//总计
+    //总计
     Double sum = 0.0;
     for (Cart c : cart) {
         sum += c.getPrice();
@@ -37,7 +37,12 @@
         </td>
         <td><%=c.getGoodsname() %>
         </td>
-        <td><%=c.getNumber() %>
+        <td>
+            <form action="<%=request.getContextPath()%>/update.cart" method="get">
+                <input type="hidden" name="goodsname" value="<%=c.getGoodsname() %>">
+                <input type="number" name="number" value="<%=c.getNumber() %>" min="1">
+                <input type="submit" value="更新">
+            </form>
         </td>
         <td><%=c.getPrice() %>
         </td>

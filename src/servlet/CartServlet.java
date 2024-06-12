@@ -34,7 +34,11 @@ public class CartServlet extends HttpServlet {
         if ("/delete.cart".equals(path)) {
             delete(req, resp);
         }
+        if ("/update.cart".equals(path)) {
+            update(req, resp);
+        }
     }
+
 
     protected void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String index = req.getParameter("index");
@@ -146,5 +150,37 @@ public class CartServlet extends HttpServlet {
         }
         db.close();
     }
+
+    protected void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String goodsname = req.getParameter("goodsname");
+        byte[] b = goodsname.getBytes("ISO8859-1");
+        goodsname = new String(b, "utf-8");
+        System.out.println(goodsname);
+        int newNumber = Integer.parseInt(req.getParameter("number"));
+        System.out.println(newNumber);
+        User u = (User) req.getSession().getAttribute("user");
+        String username = u.getUsername();
+        DataBase db = new DataBase();
+
+        // 获取商品单价
+        ResultSet rs = db.getData("SELECT * FROM goods where goodsname='" + goodsname + "'");
+        double price = 0.0;
+        try {
+            if (rs.next()) {
+                price = rs.getDouble("price");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // 更新购物车中的商品数量和价格
+        String sql = "UPDATE cart SET number=" + newNumber + ", price=" + (price * newNumber) +
+                " WHERE goodsname='" + goodsname + "' AND un='" + username + "'";
+        db.setData(sql);
+
+        db.close();
+        resp.sendRedirect(req.getContextPath() + "/show.cart");
+    }
+
 
 }
