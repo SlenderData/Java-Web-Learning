@@ -142,7 +142,7 @@ public class OrderServlet extends HttpServlet {
             String sql = "insert into order_(id,un,goodsname,number,price) values('" + id + "','" + username + "','" + c.getGoodsname() + "'," + c.getNumber() + "," + c.getPrice() + ")";
             db.setData(sql);
         }
-        db.setData("DELETE FROM cart");
+        db.setData("DELETE FROM cart WHERE un='" + username + "'");
         req.setAttribute("id", id);
         req.getRequestDispatcher("success.jsp").forward(req, resp);
         cart_.clear();

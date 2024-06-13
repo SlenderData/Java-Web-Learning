@@ -60,7 +60,7 @@ public class CartServlet extends HttpServlet {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        rs = db.getData("SELECT * FROM cart  where goodsname='" + goodsname + "' and un='" + username + "'");
+        rs = db.getData("SELECT * FROM cart where goodsname='" + goodsname + "' and un='" + username + "'");
         try {
             if (rs.next()) {
                 String sql = "UPDATE cart SET number=" + (rs.getInt("number") + 1) + ",price=" + (price * (rs.getInt("number") + 1)) + " where goodsname='" + goodsname + "' and un='" + username + "'";
@@ -145,7 +145,6 @@ public class CartServlet extends HttpServlet {
             String goodsname = req.getParameter("goodsname");
             byte[] b = goodsname.getBytes("ISO8859-1");
             goodsname = new String(b, "utf-8");
-//			这里取得的编码是utf-8不做处理，tomcat版本不同返回的值编码可能不一样，如果中文乱码，则对编码进行处理
             String sql = "DELETE FROM cart WHERE goodsname = '" + goodsname + "' AND un = '" + username + "'";
             db.setData(sql);
             resp.sendRedirect(req.getContextPath() + "/show.cart");
