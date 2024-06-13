@@ -131,10 +131,12 @@ public class CartServlet extends HttpServlet {
 
     protected void delete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DataBase db = new DataBase();
+        User u = (User) req.getSession().getAttribute("user");
+        String username = u.getUsername();
         String type = req.getParameter("type");
         //清空
         if ("All".equals(type)) {
-            String sql = "DELETE FROM cart";
+            String sql = "DELETE FROM cart WHERE un = '" + username + "' ";
             db.setData(sql);
             resp.sendRedirect(req.getContextPath() + "/show.cart");
         }
@@ -144,7 +146,7 @@ public class CartServlet extends HttpServlet {
             byte[] b = goodsname.getBytes("ISO8859-1");
             goodsname = new String(b, "utf-8");
 //			这里取得的编码是utf-8不做处理，tomcat版本不同返回的值编码可能不一样，如果中文乱码，则对编码进行处理
-            String sql = "DELETE FROM cart WHERE goodsname = '" + goodsname + "' ";
+            String sql = "DELETE FROM cart WHERE goodsname = '" + goodsname + "' AND un = '" + username + "'";
             db.setData(sql);
             resp.sendRedirect(req.getContextPath() + "/show.cart");
         }
