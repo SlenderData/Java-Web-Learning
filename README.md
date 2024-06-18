@@ -13,4 +13,4 @@ WEB 应用开发的课程作业，基于 JSP、Servlet 和 MySQL 的简易购物
 ## 参考
 
 1. 老师上课写的半成品原 MyEclipse 项目 👉 [shoppingcart.rar](https://www.github.com/SlenderData/Java-WEB-Learning/blob/main/resources/shoppingcart.rar)
-2. 开源项目 👉 [https://github.com/ZzzzzZXxxX/Cart](https://github.com/ZzzzzZXxxX/Cart)
+2. ZzzzzZXxxX/Cart 👉 [https://github.com/ZzzzzZXxxX/Cart](https://github.com/ZzzzzZXxxX/Cart)
